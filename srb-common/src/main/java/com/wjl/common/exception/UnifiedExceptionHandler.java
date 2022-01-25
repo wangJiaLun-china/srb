@@ -30,4 +30,13 @@ public class UnifiedExceptionHandler {
         log.error(e.getMessage(), e);
         return R.setResult(ResponseEnum.BAD_SQL_GRAMMAR_ERROR);
     }
+
+    /**
+     * 自定义异常
+     */
+    @ExceptionHandler(BusinessException.class)
+    public R handleBusinessException(BusinessException e){
+        log.error(e.getMessage(), e);
+        return R.error().message(e.getMessage()).code(e.getCode());
+    }
 }

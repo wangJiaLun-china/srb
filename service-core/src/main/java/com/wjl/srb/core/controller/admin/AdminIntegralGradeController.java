@@ -1,6 +1,8 @@
 package com.wjl.srb.core.controller.admin;
 
+import com.wjl.common.exception.BusinessException;
 import com.wjl.common.result.R;
+import com.wjl.common.result.ResponseEnum;
 import com.wjl.srb.core.pojo.entity.IntegralGrade;
 import com.wjl.srb.core.service.IntegralGradeService;
 import io.swagger.annotations.ApiOperation;
@@ -44,6 +46,13 @@ public class AdminIntegralGradeController {
     public R save(
             @ApiParam(value = "积分等级对象", required = true)
             @RequestBody IntegralGrade integralGrade){
+
+        //如果借款额度为空就手动抛出一个自定义的异常！
+        if(integralGrade.getBorrowAmount() == null){
+            //BORROW_AMOUNT_NULL_ERROR(-201, "借款额度不能为空"),
+            throw new BusinessException(ResponseEnum.BORROW_AMOUNT_NULL_ERROR);
+        }
+
         boolean result = integralGradeService.save(integralGrade);
         if (result) {
             return R.ok().message("保存成功");
@@ -51,7 +60,6 @@ public class AdminIntegralGradeController {
             return R.error().message("保存失败");
         }
     }
-
     @ApiOperation("根据id获取积分等级")
     @GetMapping("/get/{id}")
     public R getById(
