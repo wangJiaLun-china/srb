@@ -8,11 +8,13 @@ import com.wjl.srb.core.pojo.entity.IntegralGrade;
 import com.wjl.srb.core.service.IntegralGradeService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Slf4j
 @CrossOrigin
 @RestController
 @RequestMapping("/admin/core/integralGrade")
@@ -24,6 +26,9 @@ public class AdminIntegralGradeController {
     @ApiOperation("积分等级列表")
     @GetMapping("/list")
     public R listAll(){
+        log.info("hello");
+        log.debug("hello");
+        log.error("hello");
         List<IntegralGrade> list = integralGradeService.list();
         return R.ok().data("list", list);
     }
