@@ -1,0 +1,5 @@
+2022-01-25 13:36:23 [INFO ] main StartupInfoLogger.java:55 com.wjl.srb.core.ServiceCoreApplication Starting ServiceCoreApplication on pipi with PID 23260 (D:\project\srb\service-core\target\classes started by wangjialun in D:\project\srb)
+2022-01-25 13:36:23 [INFO ] main SpringApplication.java:655 com.wjl.srb.core.ServiceCoreApplication The following profiles are active: dev
+2022-01-25 13:36:25 [INFO ] main StartupInfoLogger.java:61 com.wjl.srb.core.ServiceCoreApplication Started ServiceCoreApplication in 2.949 seconds (JVM running for 3.798)
+2022-01-25 17:08:33 [INFO ] http-nio-8110-exec-3 AdminIntegralGradeController.java:29 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
+2022-01-25 17:08:33 [ERROR] http-nio-8110-exec-3 AdminIntegralGradeController.java:31 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello

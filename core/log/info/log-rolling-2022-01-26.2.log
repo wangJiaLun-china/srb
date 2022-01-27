@@ -1,0 +1,7 @@
+2022-01-26 11:46:50 [INFO ] http-nio-8110-exec-8 AdminIntegralGradeController.java:29 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
+2022-01-26 11:46:50 [ERROR] http-nio-8110-exec-8 AdminIntegralGradeController.java:31 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
+2022-01-26 11:46:53 [INFO ] http-nio-8110-exec-9 AdminIntegralGradeController.java:29 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
+2022-01-26 11:46:53 [ERROR] http-nio-8110-exec-9 AdminIntegralGradeController.java:31 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
+2022-01-26 11:47:15 [INFO ] http-nio-8110-exec-10 AdminIntegralGradeController.java:29 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
+2022-01-26 11:47:15 [ERROR] http-nio-8110-exec-10 AdminIntegralGradeController.java:31 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
+2022-01-26 11:49:40 [INFO ] http-nio-8110-exec-1 AdminIntegralGradeController.java:29 com.wjl.srb.core.controller.admin.AdminIntegralGradeController hello
