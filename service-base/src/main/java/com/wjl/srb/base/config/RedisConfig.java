@@ -1,4 +1,4 @@
-package com.wjl.srb.core.config;
+package com.wjl.srb.base.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

@@ -1,4 +1,4 @@
-package com.wjl.srb.core.config;
+package com.wjl.srb.base.config;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
@@ -35,6 +35,27 @@ public class Swagger2Config {
                 .build();
     }
 
+    @Bean
+    public Docket apiConfig(){
+
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("api")
+                .apiInfo(apiInfo())
+                .select()
+                //只显示admin路径下的页面
+                .paths(Predicates.and(PathSelectors.regex("/api/.*")))
+                .build();
+
+    }
+
+    private ApiInfo apiInfo(){
+
+        return new ApiInfoBuilder()
+                .title("尚融宝-API文档")
+                .description("本文档描述了尚融宝接口")
+                .version("1.0")
+                .build();
+    }
 
     @Bean
     public Docket webApiConfig(){
@@ -51,7 +72,6 @@ public class Swagger2Config {
                 .title("尚融宝网站API文档")
                 .description("本文档描述了尚融宝网站各个模块的接口的调用方式")
                 .version("1.6")
-                .contact(new Contact("Helen", "http://atguigu.com", "admin@atguigu.com"))
                 .build();
     }
 }
