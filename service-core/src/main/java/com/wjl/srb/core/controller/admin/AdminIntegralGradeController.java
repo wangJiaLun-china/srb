@@ -15,7 +15,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Slf4j
-@CrossOrigin
 @RestController
 @RequestMapping("/admin/core/integralGrade")
 public class AdminIntegralGradeController {
