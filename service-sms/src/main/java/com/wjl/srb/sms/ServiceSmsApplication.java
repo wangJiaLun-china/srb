@@ -2,8 +2,10 @@ package com.wjl.srb.sms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
+@EnableFeignClients
 @SpringBootApplication
 @ComponentScan({"com.wjl.srb", "com.wjl.common"})
 public class ServiceSmsApplication {

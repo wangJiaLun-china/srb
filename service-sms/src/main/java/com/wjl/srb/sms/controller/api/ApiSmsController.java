@@ -5,6 +5,7 @@ import com.wjl.common.result.R;
 import com.wjl.common.result.ResponseEnum;
 import com.wjl.common.util.RandomUtils;
 import com.wjl.common.util.RegexValidateUtils;
+import com.wjl.srb.sms.client.CoreUserInfoClient;
 import com.wjl.srb.sms.service.SmsService;
 import com.wjl.srb.sms.util.SmsProperties;
 import io.swagger.annotations.Api;
@@ -32,6 +33,9 @@ public class ApiSmsController {
     @Resource
     private RedisTemplate redisTemplate;
 
+    @Resource
+    private CoreUserInfoClient coreUserInfoClient;
+
     @ApiOperation("获取验证码")
     @GetMapping("/send/{mobile}")
     public R send(
@@ -43,6 +47,11 @@ public class ApiSmsController {
         //MOBILE_ERROR(-203, "手机号不正确"),
         Assert.isTrue(RegexValidateUtils.checkCellphone(mobile), ResponseEnum.MOBILE_ERROR);
 
+        //手机号是否注册
+        boolean result = coreUserInfoClient.checkMobile(mobile);
+        System.out.println("result = " + result);
+        Assert.isTrue(result == false, ResponseEnum.MOBILE_EXIST_ERROR);
+
         //生成验证码
         String code = RandomUtils.getFourBitRandom();
         //组装短信模板参数
@@ -50,7 +59,7 @@ public class ApiSmsController {
         param.put("code", code);
         //发送短信
 //        smsService.send(mobile, SmsProperties.TEMPLATE_CODE, param);
-
+        System.out.println("验证码: "+code);
         //将验证码存入redis
         redisTemplate.opsForValue().set("srb:sms:code:" + mobile, code, 5, TimeUnit.MINUTES);
 
