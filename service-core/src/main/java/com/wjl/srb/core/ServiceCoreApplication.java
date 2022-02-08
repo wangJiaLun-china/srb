@@ -9,6 +9,10 @@ import org.springframework.context.annotation.ComponentScan;
 public class ServiceCoreApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceCoreApplication.class, args);
+        try {
+            SpringApplication.run(ServiceCoreApplication.class, args);
+        }catch(Throwable e) {
+            e.printStackTrace();
+        }
     }
 }
