@@ -12,6 +12,12 @@ spring:
     url: jdbc:mysql://124.222.101.146:3306/srb_core?serverTimezone=GMT%2B8&characterEncoding=utf-8
     username: root
     password: 76516051t
+  rabbitmq:
+    host: 124.222.101.146
+    port: 5672
+    virtual-host: /srbhost
+    username: srbuser
+    password: 123456
   redis:
     host: 124.222.101.146
     port: 6379

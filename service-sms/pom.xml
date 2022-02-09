@@ -49,5 +49,11 @@
             <artifactId>aliyun-java-sdk-core</artifactId>
         </dependency>
 
+        <!--rabbitmq消息队列-->
+        <dependency>
+            <groupId>com.wjl</groupId>
+            <artifactId>rabbit-mq</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
