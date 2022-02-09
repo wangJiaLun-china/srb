@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.wjl.srb.core.pojo.query.UserInfoQuery;
 import com.wjl.srb.core.pojo.vo.LoginVO;
 import com.wjl.srb.core.pojo.vo.RegisterVO;
+import com.wjl.srb.core.pojo.vo.UserIndexVO;
 import com.wjl.srb.core.pojo.vo.UserInfoVO;
 
 /**
@@ -28,4 +29,6 @@ public interface UserInfoService extends IService<UserInfo> {
     void lock(Long id, Integer status);
 
     boolean checkMobile(String mobile);
+
+    UserIndexVO getIndexUserInfo(Long userId);
 }
